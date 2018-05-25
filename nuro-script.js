@@ -6,8 +6,13 @@ const jsonexport = require('jsonexport');
 
 let errors = [];
 
+const test = () => {
+    console.log('receiving from nuro-script');
+}
+
+
 _.each(raw.errors, function(error, index){
-   
+
     let temp = {};
     let frames;
 
@@ -28,7 +33,7 @@ _.each(raw.errors, function(error, index){
         temp.nuro_id = error.corrected.nuro_id;
     }
 
-    // If error Frames exists, set frames to {}, 
+    // If error Frames exists, set frames to {},
     // Otherwise, set frames to stationary
     if (error.frames) frames = {}
     else frames = 'stationary';
@@ -37,14 +42,14 @@ _.each(raw.errors, function(error, index){
 	if (error.frames) {
 
         // Set types variable to be "grouped by" error type?
-        // Double check what groupBy Lodash does 
+        // Double check what groupBy Lodash does
 		let types = _.groupBy(error.frames,'error_type')
-        
+
         // Go through each of the types and set frames[key] to error.frame_id
 		_.each(types, function(type, key){
 			frames[key] = _.map(type,function(error){return error.frame_id});
         })
-        
+
 
         // debug
         // console.log(frames);
@@ -103,3 +108,5 @@ jsonexport(errors,function(err, csv){
 // Line 32, 33
 // temp.cuboidId   = error.original ? error.original.uuid : error.error_type;
 // temp.nuro_id    = error.original ? error.original.nuro_id : error.corrected.nuro_id
+
+module.exports = { test };
