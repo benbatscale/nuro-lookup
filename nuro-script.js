@@ -10,7 +10,6 @@ const test = () => {
     console.log('receiving from nuro-script');
 }
 
-
 _.each(raw.errors, function(error, index){
 
     let temp = {};
