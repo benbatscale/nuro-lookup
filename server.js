@@ -1,7 +1,7 @@
 const connect     = require('connect');
 const serveStatic = require('serve-static');
-const nuro        = require('nuro-script');
-const test        = require('test');
+const nuro        = require('./nuro-script.js');
+const test        = require('./test.js');
 
 connect().use(serveStatic(__dirname)).listen(8080, () => console.log('Server running on 8080...'));
 
