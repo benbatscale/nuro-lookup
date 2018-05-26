@@ -59,13 +59,13 @@ module.exports = jsonData => {
 		errors.push(temp);
 	})
 
-	jsonexport(errors,function(err, csv){
-		if(err) return console.log(err);
-		fs.writeFile('nuro_errors_summary.csv', csv, function(err) {
-			if (err) throw err;
-			console.log('file saved');
-		});
-	});
+	// jsonexport(errors,function(err, csv){
+	// 	if(err) return console.log(err);
+	// 	fs.writeFile('nuro_errors_summary.csv', csv, function(err) {
+	// 		if (err) throw err;
+	// 		console.log('file saved');
+	// 	});
+	// });
 	// console.log('errors: ',errors)
 	return errors;
 }

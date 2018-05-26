@@ -18,25 +18,32 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
 app.get('/:taskId', (req, res) => {
   const taskId = req.params.taskId;
   const taskLink = `https://www.scaleapi.com/scalers/tasks?lidarId=${taskId}&force=1`;
-  let report;
+  let dateSubmitted, report, errorRate;
 
   fs.readFile('database/nuro-mail-parser.csv', 'utf8', (err, data) => {
     if (err) throw err;
     let results = Papa.parse(data, { header: true });
 
     results.data.forEach(element => {
-      if (taskId === element['Task ID']) detailedReport = element['Detailed Report'];    
+      if (taskId === element['Task ID']) {
+        detailedReport = element['Detailed Report'];    
+        dateSubmitted = element['Date'];
+        errorRate = element['Error Rate'];
+      }
     });
 
     let reportToBeParsed = axios.get(detailedReport);
 
     reportToBeParsed.then(data => {
       report = nuro(data.data);
-
+      console.log('report length', report.length)      
       res.render('table', {
         report: parsed(report),
         taskLink: taskLink,
-        taskId: taskId
+        taskId: taskId,
+        dateSubmitted: dateSubmitted,
+        numErrors: report.length,
+        errorRate: errorRate
       });
     });
   })
