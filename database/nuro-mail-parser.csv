@@ -1,0 +1,7 @@
+Message ID,Received At,Processed At,Task ID,Error Rate,Date,Detailed Report
+0c89a7fc693ea5aae197cac31847dd44,5/26/2018 6:20:06,43246.27603,5ab3e48f2407910043f994fb,17.95%,"Fri, May 25, 2018 at 9:35 AM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180321_111705_00002/1912.0_1942.0/qa_report.json
+b4f7726bc32b9fe41685653f950047c2,43246.27808,43246.27814,5ab0bfc314bcf000143be4b7,19.34%,"Fri, May 25, 2018 at 9:52 PM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180319_094854_00002/2908.0_2938.0/qa_report.json
+41e56e0488f520000462f586445a501c,43246.2848,43246.28497,5a8eaf6bf24863003c30be31,43.00%,"Wed, May 23, 2018 at 6:15 PM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180219_214758_00004/3400.0_3430.0/qa_report.json
+eaac61fa42c4362b34cee94a0c519206,43246.28464,43246.28498,5ab4ed9bee0e300019dca323,37.72%,"Thu, May 24, 2018 at 10:45 AM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180322_102613_00002/2992.0_3022.0/qa_report.json
+aa38d64b4c99a63b0c8bd9ff82c04f0c,43246.28477,43246.28498,5ad768b952c62e00199ec216,15.80%,"Tue, May 22, 2018 at 3:20 PM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180327_223224_00004/2182.0_2212.0/qa_report.json
+b7b2fd90b8275421dbdded16cfebd8b1,43246.28492,43246.28498,5a7305f6da1ddd00277275a8,16.34%,"Wed, May 23, 2018 at 2:45 PM",https://s3-us-west-1.amazonaws.com/6876.forscaleapi/20180119_091629_00004/453.0_483.0/qa_report.json
