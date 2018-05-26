@@ -1,27 +1,31 @@
 doctype html  
 html(lang='en')  
  head
-   title Pug
-   link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
-   link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r", crossorigin="anonymous")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{taskId}
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
  body
-    table(class="table")
+    div(class="container")
+      h1(style={"text-align": "center"})
+        a(href=taskLink) Link
+      table(class="table table-bordered table-hover")
         thead
-            tr
-                th(scope="col") Error Type
-                th(scope="col") Label
-                th(scope="col") Cuboid ID
-                th(scope="col") Nuro ID
-                th(scope="col") Dimensions
-                th(scope="col") Position
-                th(scope="col") Frames
-        tbody   
-          each val in report
-           tr
-              td #{JSON.stringify(val.error_type)}
-              td #{JSON.stringify(val.label)}
-              td #{JSON.stringify(val.cuboidId)}
-              td #{JSON.stringify(val.nuro_id)}
-              td #{JSON.stringify(val.dimensions)}
-              td #{JSON.stringify(val.position)}
-              td #{JSON.stringify(val.frames)}
+          tr
+            th(scope="col" class="info col-md-2" style={"text-align": "center"}) Cuboid ID 
+            th(scope="col" class="info col-md-2" style={"text-align": "center"}) Error Type
+            th(scope="col" class="info col-md-2" style={"text-align": "center"}) Label
+            //- th Nuro ID
+            th(scope="col" class="info col-md-2" style={"text-align": "center"}) Dimensions [x, y, z]
+            th(scope="col" class="info col-md-2" style={"text-align": "center"}) Position [x, y, z]
+            th(scope="col" class="info col-md-2") Frames
+          tbody   
+            each val in report
+              tr
+                  td #{val.cuboidId}
+                  td #{val.error_type}
+                  td #{val.label}
+                  //- td #{val.nuro_id}
+                  td #{val.dimensions}
+                  td #{val.position}
+                  td #{val.frames}
