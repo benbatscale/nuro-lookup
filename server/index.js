@@ -17,7 +17,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
 
-app.get('/:taskId', (req, res) => {
+app.get('/api/:taskId', (req, res) => {
   const taskId = req.params.taskId;
   const taskLink = `https://www.scaleapi.com/scalers/tasks?lidarId=${taskId}&force=1`;
   let dateSubmitted, report, errorRate;
