@@ -5,6 +5,7 @@
   "main": "nuro-script.js",
   "scripts": {
     "start": "node server/index.js",
+    "build": "npm install; npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

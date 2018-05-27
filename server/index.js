@@ -14,6 +14,7 @@ app.set("views", path.join(__dirname, "../views"));
 app.use(express.static('public'))
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
 
 app.get('/:taskId', (req, res) => {
   const taskId = req.params.taskId;
@@ -26,7 +27,7 @@ app.get('/:taskId', (req, res) => {
 
     results.data.forEach(element => {
       if (taskId === element['Task ID']) {
-        detailedReport = element['Detailed Report'];    
+        detailedReport = element['Detailed Report'];
         dateSubmitted = element['Date'];
         errorRate = element['Error Rate'];
       }
@@ -36,7 +37,6 @@ app.get('/:taskId', (req, res) => {
 
     reportToBeParsed.then(data => {
       report = nuro(data.data);
-      console.log('report length', report.length)      
       res.render('table', {
         report: parsed(report),
         taskLink: taskLink,
