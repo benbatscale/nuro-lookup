@@ -15,10 +15,7 @@ app.set("views", path.join(__dirname, "../views"));
 
 app.use(express.static('public'))
 
-//app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
-app.get('/', (req, res) => {
-  res.send('asdf');
-});
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
 
 app.get('/:taskId', (req, res) => {
   const taskId = req.params.taskId;
@@ -53,4 +50,4 @@ app.get('/:taskId', (req, res) => {
   })
 });
 
-app.listen(port, console.log('listening on server localhost:5000'));
+app.listen(port, () => console.log('listening on server localhost:5000'));
