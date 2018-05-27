@@ -5,7 +5,7 @@
   "main": "nuro-script.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "npm install; npm start",
+    "build": "npm install; node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +27,8 @@
     "lodash": "^4.17.10",
     "papaparse": "^4.4.0",
     "pug": "^2.0.3"
+  },
+  "engines": {
+    "node": "^10.1.0"
   }
 }
