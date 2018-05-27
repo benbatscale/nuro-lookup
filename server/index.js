@@ -8,6 +8,8 @@ const fs      = require('fs')
 const path    = require('path');
 const app     = express()
 
+const port = process.env.PORT || 5000;
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../views"));
 
@@ -51,4 +53,4 @@ app.get('/:taskId', (req, res) => {
   })
 });
 
-app.listen(process.env.PORT || 5000, console.log('listening on server localhost:8080'));
+app.listen(port, console.log('listening on server localhost:5000'));
