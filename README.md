@@ -5,7 +5,7 @@ Nuro Tasks Lookup helps with looking up error reports for Nuro Tasks that have b
 ## Getting Started
 
 QA: Enter the TaskID into the input box and press enter!  
-If the taskID is valid, it will render the error report,
+If the taskID is valid, it will render the report,  
 Otherwise, it will render an error message.
 
 Developers: git clone this repository, npm install, npm start, then go to localhost:5000 and test it out!
