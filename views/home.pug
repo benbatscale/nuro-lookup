@@ -1,5 +1,5 @@
-doctype html 
-html(lang='en')  
+doctype html
+html(lang='en')
     head
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -9,7 +9,7 @@ html(lang='en')
             include ../public/bootstrap/bootstrap.min.css
             include ../public/styles.css
         title Nuro Tasks
-    
+
     body
     div(class="center-div")
         h1 Enter Nuro Task ID
@@ -30,7 +30,7 @@ html(lang='en')
                         document.querySelector('.error-message').innerHTML = '';
                         window.location.href = apiURL;
                     },
-                    error   : error => document.querySelector('.error-message').innerHTML = 'Task ID not available'
+                    error : error => document.querySelector('.error-message').innerHTML = 'Task ID not available'
                 });
             }
             userInput.value = '';
