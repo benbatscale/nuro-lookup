@@ -17,12 +17,12 @@ Node version ^10.1.0
 NPM version ^5.6.0
 
 Dependencies:  
-  Axios  
-  Express  
-  JsonExport  
-  Lodash  
-  Papaparse  
-  Pug  
+  * Axios  
+  * Express  
+  * JsonExport  
+  * Lodash  
+  * Papaparse  
+  * Pug  
 
 ## Authors
 
