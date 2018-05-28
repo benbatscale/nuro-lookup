@@ -13,3 +13,8 @@ body {
     width: 50%;
     height: 50%;
 }
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+}

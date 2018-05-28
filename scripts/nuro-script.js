@@ -53,7 +53,7 @@ module.exports = jsonData => {
 					temp.position = [_.find(error.corrected.cuboids,"position").position]
 					temp.label = [_.find(error.corrected.cuboids,"label").label]
 				}
-				console.log('missing: ',error.error_type)
+				// console.log('missing: ',error.error_type)
 			}
 			// temp.dimensions = [1,2,3]
 		errors.push(temp);

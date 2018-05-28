@@ -13,14 +13,16 @@ const port = process.env.PORT || 5000;
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../views"));
 
-app.use(express.static('public'))
+app.use('/static', express.static(path.join(__dirname, '..', 'public')));
+console.log(path.join(__dirname, '..', 'public'));
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
+app.get('/', (req, res) => res.render('home'));
 
 app.get('/api/:taskId', (req, res) => {
-  const taskId = req.params.taskId;
+  const taskId   = req.params.taskId;
+  if (typeof taskId !== 'string' || taskId.length < 24) throw Error
   const taskLink = `https://www.scaleapi.com/scalers/tasks?lidarId=${taskId}&force=1`;
-  let dateSubmitted, report, errorRate;
+  let dateSubmitted, report, errorRate, reportToBeParsed, detailedReport;
 
   fs.readFile('database/nuro-mail-parser.csv', 'utf8', (err, data) => {
     if (err) throw err;
@@ -29,24 +31,24 @@ app.get('/api/:taskId', (req, res) => {
     results.data.forEach(element => {
       if (taskId === element['Task ID']) {
         detailedReport = element['Detailed Report'];
-        dateSubmitted = element['Date'];
-        errorRate = element['Error Rate'];
+        dateSubmitted  = element['Date'];
+        errorRate      = element['Error Rate'];
       }
     });
 
-    let reportToBeParsed = axios.get(detailedReport);
+    reportToBeParsed = axios.get(detailedReport);
 
     reportToBeParsed.then(data => {
       report = nuro(data.data);
       res.render('table', {
-        report: parsed(report),
-        taskLink: taskLink,
-        taskId: taskId,
-        dateSubmitted: dateSubmitted,
-        numErrors: report.length,
-        errorRate: errorRate
+        report        : parsed(report),
+        taskLink      : taskLink,
+        taskId        : taskId,
+        dateSubmitted : dateSubmitted,
+        numErrors     : report.length,
+        errorRate     : errorRate
       });
-    });
+    }).catch(err => console.log(err));
   })
 });
 
