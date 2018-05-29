@@ -11,6 +11,10 @@ Otherwise, it will render an error message.
 
 Go to https://nuro-tasks.herokuapp.com to test the live/production version
 
+## To-do
+[ ] Everytime an email comes in from Nuro [QA Report], automatically update database onto production site
+[ ] Send an email notifying QA team that there is a new report available
+
 ### Prerequisites
 
 Node version ^10.1.0  
