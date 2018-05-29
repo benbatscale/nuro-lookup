@@ -1,6 +1,6 @@
 # Nuro Tasks Lookup
 
-Nuro Tasks Lookup helps with looking up error reports for Nuro Tasks that have been returned.
+Nuro Tasks Lookup helps with looking up error reports for Nuro Tasks that have been returned. 
 
 ## Getting Started
 
