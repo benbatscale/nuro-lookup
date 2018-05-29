@@ -13,8 +13,12 @@ Go to https://nuro-tasks.herokuapp.com to test the live/production version
 
 ## Diagrams
 
+### Process
 ![Process](/diagrams/Process.png)
+### Homepage
 ![Homepage](/diagrams/Homepage.png)
+
+### Table Example
 ![Table Example](/diagrams/TableExample.png)
 
 ## To-do
