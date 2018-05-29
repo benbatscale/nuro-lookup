@@ -13,7 +13,7 @@ Go to https://nuro-tasks.herokuapp.com to test the live/production version
 
 ## Diagrams
 
-![Process](/images/Process.png)
+![Process](/diagrams/Process.png)
 
 ## To-do
 [ ] Everytime an email comes in from Nuro [QA Report], automatically update database onto production site   
