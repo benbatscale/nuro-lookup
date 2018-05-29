@@ -44,10 +44,11 @@ module.exports = jsonData => {
         if (item.frames === 'stationary') {
             objToAdd['frames'] = 'Stationary';
         } else if (item.frames['Box.WrongPos']) {
-            if (item.frames['Box.WrongPos'].length > 1) 
+            if (item.frames['Box.WrongPos'].length > 1) {
                 objToAdd['frames'] = `Between Frame ${item.frames['Box.WrongPos'][0]} and ${item.frames['Box.WrongPos'][item.frames['Box.WrongPos'].length - 1]}`;
-            else
+            } else {
                 objToAdd['frames'] = `Frame ${item.frames['Box.WrongPos'][0]}`;
+            }
         } else if (item.frames['Box.WrongHeading']) {
             objToAdd['frames'] = item.frames['Box.WrongHeading'];
         }
